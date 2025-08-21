@@ -1,7 +1,7 @@
 ---
 title: Contact Us
 layout: layouts/base.njk
-permalink: /pages/contact/
+permalink: /pages/contact-us/
 description: Contact CalcTools AI for support, feedback, or inquiries about our free online calculators and converters.
 ---
 
@@ -105,6 +105,8 @@ description: Contact CalcTools AI for support, feedback, or inquiries about our 
       </div>
     </div>
   </div>
+
+  **Have questions about our [online calculators](https://calctoolsai.com/)? We're here to help.**
 
   <div class="privacy-note">
     <p><strong>Privacy Commitment:</strong> We value your privacy. Any information you share is used solely to respond to your inquiry and is never shared with third parties. Your data is secure with us.</p>

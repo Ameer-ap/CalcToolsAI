@@ -1,7 +1,7 @@
 ---
 title: About Us
 layout: layouts/base.njk
-permalink: /pages/about/
+permalink: /pages/about-us/
 description: Learn about CalcTools AI, our mission, and our free, accurate online calculators for students and professionals.
 ---
 
@@ -39,7 +39,7 @@ Your privacy is our priority. We never store or track the data you enter into ou
 
 We are continuously expanding our collection of tools and improving their usability. Our goal is to be your go-to resource for accurate and convenient solutions, all in one place.
 
-**Explore Calctools AI today and experience smarter, faster, and easier calculations.**
+**[Explore our comprehensive calculator suite](https://calctoolsai.com/) and experience smarter, faster, and easier calculations.**
 
 ---
 

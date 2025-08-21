@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy 
 layout: layouts/base.njk 
-permalink: /pages/privacy/ 
+permalink: /pages/privacy-policy/ 
 description: Privacy Policy for CalcTools AI. Learn how we handle your data, cookies, and user privacy when using our free online calculators and converters.
 ---
 
@@ -42,7 +42,7 @@ Our Service is not directed to children under the age of 13. We do not knowingly
 Last Updated: August 2025
 
 7. Contact Us
-If you have any questions or concerns about this Privacy Policy, you can contact us at:
+If you have any questions about this Privacy Policy or how we handle your data while using [our calculator tools](https://calctoolsai.com/), please contact us at:
 
 📧 support@calctoolsai.com
 

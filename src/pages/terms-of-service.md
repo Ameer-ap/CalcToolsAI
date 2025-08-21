@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 layout: layouts/base.njk
-permalink: /pages/terms/
+permalink: /pages/terms-of-service/
 description: Read the Terms of Service for CalcTools AI. Learn the rules for using our free online calculators, converters, and related tools.
 ---
 
@@ -21,7 +21,7 @@ Please read them carefully.
 Welcome to {{ site.siteName }} ({{ site.siteUrl }}). By using our website and services, you agree to the following Terms of Service. Please read them carefully.**
 
 1. Use of Services
-CalcTools AI provides free online calculators and converters for educational, informational, and personal use. You agree to use the tools responsibly and for lawful purposes only. The services are provided on an "as is" and "as available" basis.
+[CalcTools AI](https://calctoolsai.com/) provides free online calculators and converters for educational, informational, and personal use. You agree to use the tools responsibly and for lawful purposes only. The services are provided on an "as is" and "as available" basis.
 
 2. Accuracy of Calculations
 While we strive to ensure accuracy, all calculations and information are provided "as is" without warranties of any kind, either express or implied. Users are encouraged to verify important results independently before relying on them for professional, financial, or academic decisions. CalcTools AI is not liable for any damages or losses arising from reliance on the tools.

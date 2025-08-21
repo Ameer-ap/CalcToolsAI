@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
       output: "_site",     // Build output directory
       includes: "_includes", // Includes directory (relative to input)
       data: "_data"        // Data directory (relative to input)
-    }
+    },
+    pathPrefix: "/CalcToolsAI/"  // 👈 important for GitHub Pages
   };
 };
