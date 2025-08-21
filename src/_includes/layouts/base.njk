@@ -17,9 +17,9 @@
 
           {# ✅ Breadcrumb fixed #}
           <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
               <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="{{ site.baseUrl }}/">
+                <a itemprop="item" href="{{ '/' | url }}">
                   <span itemprop="name">Home</span>
                 </a>
                 <meta itemprop="position" content="1" />
@@ -28,7 +28,7 @@
                 <span itemprop="name">{{ title }}</span>
                 <meta itemprop="position" content="2" />
               </li>
-            </ul>
+            </ol>
           </nav>
           {# end breadcrumb #}
 
