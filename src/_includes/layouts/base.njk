@@ -5,7 +5,6 @@
 <body>
   {% include "partials/gtm-noscript.njk" %}
   {% include "partials/header.njk" %}
-
   <main>
     {% if page.url == "/" %}
       {# Homepage will provide its own section wrappers in index.md #}
@@ -14,32 +13,29 @@
       {# All other pages: content container on body background #}
       <section class="content-section">
         <div class="container-padded page-content">
-
-          {# ✅ Breadcrumb fixed #}
+          {# Enhanced Breadcrumb #}
           <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="{{ '/' | url }}">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb-list">
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item">
+                <a itemprop="item" href="{{ '/' | url }}" class="breadcrumb-link">
                   <span itemprop="name">Home</span>
                 </a>
                 <meta itemprop="position" content="1" />
               </li>
-              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">{{ title }}</span>
+              <li class="breadcrumb-separator" aria-hidden="true">/</li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item breadcrumb-current">
+                <span itemprop="name" class="breadcrumb-current-text">{{ title or "Page" }}</span>
                 <meta itemprop="position" content="2" />
               </li>
             </ol>
           </nav>
           {# end breadcrumb #}
-
           {{ content | safe }}
         </div>
       </section>
     {% endif %}
   </main>
-
   {% include "partials/footer.njk" %}
-
   {% block scripts %}
     {% if page.url == "/" or page.fileSlug == "calculator" %}
       <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js" crossorigin="anonymous"></script>
