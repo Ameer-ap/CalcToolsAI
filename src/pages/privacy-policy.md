@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy 
 layout: layouts/base.njk 
-permalink: /pages/privacy-policy/ 
+permalink: /privacy-policy/ 
 description: Privacy Policy for CalcTools AI. Learn how we handle your data, cookies, and user privacy when using our free online calculators and converters.
 ---
 

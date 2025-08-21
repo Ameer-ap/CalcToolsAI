@@ -1,7 +1,7 @@
 ---
 title: About Us
 layout: layouts/base.njk
-permalink: /pages/about-us/
+permalink: /about-us/
 description: Learn about CalcTools AI, our mission, and our free, accurate online calculators for students and professionals.
 ---
 

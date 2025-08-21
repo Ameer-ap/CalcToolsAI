@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 layout: layouts/base.njk
-permalink: /pages/terms-of-service/
+permalink: /terms-of-service/
 description: Read the Terms of Service for CalcTools AI. Learn the rules for using our free online calculators, converters, and related tools.
 ---
 
