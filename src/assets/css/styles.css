@@ -632,3 +632,24 @@ footer .footer-content {
     width: 100%; 
   }
 }
+.breadcrumb ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li::after {
+  content: "/";
+  margin-left: 0.5rem;
+}
+
+.breadcrumb li:last-child::after {
+  content: ""; /* remove slash at the end */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--primary);
+}
