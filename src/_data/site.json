@@ -1,7 +1,6 @@
 {
   "siteName": "CalcTools AI",
-  "siteUrl": "https://calctoolsai.com",
+  "url": "https://calctoolsai.com",
   "apiUrl": "https://api.calctoolsai.com",
-  "baseUrl": "https://ameer-ap.github.io/CalcToolsAI",
   "description": "Free AI-powered calculators for math, finance & science. Get instant, accurate solutions with step-by-step results. Trusted by students & professionals."
 }

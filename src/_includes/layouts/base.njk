@@ -1,46 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "partials/head.njk" %}
-{% include "partials/gtm.njk" %}
-<body>
-  {% include "partials/gtm-noscript.njk" %}
-  {% include "partials/header.njk" %}
-  <main>
-    {% if page.url == "/" %}
-      {# Homepage will provide its own section wrappers in index.md #}
-      {{ content | safe }}
-    {% else %}
-      {# All other pages: content container on body background #}
-      <section class="content-section">
-        <div class="container-padded page-content">
-          {# Enhanced Breadcrumb #}
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb-list">
-              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item">
-                <a itemprop="item" href="{{ '/' | url }}" class="breadcrumb-link">
-                  <span itemprop="name">Home</span>
-                </a>
-                <meta itemprop="position" content="1" />
-              </li>
-              <li class="breadcrumb-separator" aria-hidden="true">/</li>
-              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item breadcrumb-current">
-                <span itemprop="name" class="breadcrumb-current-text">{{ title or "Page" }}</span>
-                <meta itemprop="position" content="2" />
-              </li>
-            </ol>
-          </nav>
-          {# end breadcrumb #}
-          {{ content | safe }}
-        </div>
-      </section>
+  <head>
+    {% include "partials/head.njk" %}
+
+    {# ✅ Canonical URL for SEO #}
+    <link 
+      rel="canonical" 
+      href="{{ page.url | absoluteUrl(site.url) }}"
+    >
+
+    {# ✅ Basic meta for SEO #}
+    <title>{{ title or site.siteName }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+
+    {# ✅ Open Graph Tags (for social sharing) #}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.siteName }}">
+    <meta property="og:title" content="{{ title or site.siteName }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}">
+    {% if ogImage %}
+      <meta property="og:image" content="{{ ogImage | absoluteUrl(site.url) }}">
     {% endif %}
-  </main>
-  {% include "partials/footer.njk" %}
-  {% block scripts %}
-    {% if page.url == "/" or page.fileSlug == "calculator" %}
-      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js" crossorigin="anonymous"></script>
-      <script src="/assets/js/script.js?v=1.2" defer></script>
+
+    {# ✅ Twitter Card #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title or site.siteName }}">
+    <meta name="twitter:description" content="{{ description or site.description }}">
+    {% if ogImage %}
+      <meta name="twitter:image" content="{{ ogImage | absoluteUrl(site.url) }}">
     {% endif %}
-  {% endblock %}
-</body>
+  </head>
+  <body>
+    {% include "partials/gtm-noscript.njk" %}
+    {% include "partials/header.njk" %}
+
+    <main>
+      {% if page.url == "/" %}
+        {# ✅ Homepage provides its own wrappers (via index.md) #}
+        {{ content | safe }}
+      {% else %}
+        <section class="content-section">
+          <div class="container-padded page-content">
+
+            {# ✅ Schema.org Breadcrumbs, now fully compliant #}
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb-list">
+
+                <!-- Home -->
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item">
+                  <a itemprop="item" href="{{ site.url }}/" class="breadcrumb-link">
+                    <span itemprop="name">Home</span>
+                  </a>
+                  <meta itemprop="position" content="1" />
+                </li>
+
+                <li class="breadcrumb-separator" aria-hidden="true">/</li>
+
+                <!-- Current Page -->
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item breadcrumb-current">
+                  <a itemprop="item" href="{{ page.url | absoluteUrl(site.url) }}" class="breadcrumb-link">
+                    <span itemprop="name">{{ title or "Page" }}</span>
+                  </a>
+                  <meta itemprop="position" content="2" />
+                </li>
+
+              </ol>
+            </nav>
+            {# /Breadcrumbs #}
+
+            {{ content | safe }}
+          </div>
+        </section>
+      {% endif %}
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    {% block scripts %}
+      {% if page.url == "/" or page.fileSlug == "calculator" %}
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js" crossorigin="anonymous"></script>
+        <script src="/assets/js/script.js?v=1.2" defer></script>
+      {% endif %}
+    {% endblock %}
+  </body>
 </html>
