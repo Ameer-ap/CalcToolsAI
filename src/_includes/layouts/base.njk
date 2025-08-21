@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "partials/head.njk" %}
+{% include "partials/gtm.njk" %}
+<body>
+  {% include "partials/gtm-noscript.njk" %}
+  {% include "partials/header.njk" %}
+
+  <main>
+    {% if page.url == "/" %}
+      {# Homepage will provide its own section wrappers in index.md #}
+      {{ content | safe }}
+    {% else %}
+      {# All other pages: content container on body background #}
+      <section class="content-section">
+        <div class="container-padded page-content">
+          {{ content | safe }}
+        </div>
+      </section>
+    {% endif %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  {% block scripts %}
+    {% if page.url == "/" or page.fileSlug == "calculator" %}
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.js" crossorigin="anonymous"></script>
+      <script src="/assets/js/script.js?v=1.2" defer></script>
+    {% endif %}
+  {% endblock %}
+</body>
+</html>

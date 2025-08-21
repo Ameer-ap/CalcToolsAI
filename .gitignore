@@ -1,0 +1,14 @@
+# Eleventy output
+_site/
+
+# Node modules
+node_modules/
+
+# Caches and logs
+.cache/
+
+node_modules/
+.DS_Store
+dist/
+
+*.log

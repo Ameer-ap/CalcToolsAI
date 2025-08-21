@@ -1,0 +1,22 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description }}">
+  <!-- Dynamic Title -->
+  <title>
+    {% if title %}
+      {{ title }} | {{ site.siteName }}
+    {% else %}
+      {{ site.siteName }} – Free AI-Powered Calculators
+    {% endif %}
+  </title>
+
+  <link rel="preload" href="/assets/css/styles.css?v=1.2" as="style">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/img/site.webmanifest">
+  <link rel="canonical" href="{{ site.siteUrl }}{{ page.url | url }}">
+  <meta name="robots" content="index, follow">
+</head>
