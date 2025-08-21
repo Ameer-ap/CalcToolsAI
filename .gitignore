@@ -1,5 +1,17 @@
-# Ignore Eleventy output
+# Eleventy output
 _site/
 .cache/
+
+# Node
 node_modules/
+npm-debug.log
+package-lock.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
 
