@@ -1,0 +1,19 @@
+# robots.txt for https://calctoolsai.com/
+
+# Allow all web crawlers
+User-agent: *
+
+# Disallow access to common folders and files
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /_site/
+Disallow: /node_modules/
+
+# Disallow specific log files
+Disallow: /*.log$
+
+# Sitemap location
+Sitemap: https://calctoolsai.com/sitemap.xml

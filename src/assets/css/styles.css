@@ -50,8 +50,8 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
-  text-decoration: underline;
+  color: var(--active);
+  text-decoration: none;
 }
 
 * {
@@ -177,7 +177,7 @@ header .container-padded {
   font-weight: 500;
 }
 .main-nav a:hover {
-  color: var(--accent);
+  color: var(--active);
 }
 
 /* ===== Footer ===== */
@@ -216,7 +216,7 @@ footer .footer-content {
 }
 
 .footernav a:hover {
-  color: var(--accent);
+  color: var(--active);
 }
 
 .footernav a:not(:last-child)::after {
@@ -343,14 +343,8 @@ footer .footer-content {
 }
 
 .keys button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--active);
   outline-offset: 2px;
-}
-
-/* Fix for mobile browsers: */
-  -webkit-appearance: none; 
-  appearance: none;
-  -webkit-tap-highlight-color: transparent; /* removes blue highlight on tap */
 }
 
 .keys button.num { background: var(--num-bg); }
@@ -497,7 +491,7 @@ footer .footer-content {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--active);
   box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
 }
 

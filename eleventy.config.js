@@ -1,8 +1,17 @@
 const { DateTime } = require("luxon");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function (eleventyConfig) {
-  // Add passthrough copy for assets
+  // Add passthrough copy for assets and robots.txt
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+
+  // Add the sitemap plugin
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://calctoolsai.com",
+    },
+  });
 
   // Add a custom date filter (for footer, posts, etc.)
   eleventyConfig.addFilter("date", function (dateObj, format = "yyyy") {
@@ -24,11 +33,11 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "src",         // Source files directory
-      output: "_site",      // Build output directory
-      includes: "_includes",// Includes directory (relative to input)
-      data: "_data"         // Data directory (relative to input)
+      input: "src", // Source files directory
+      output: "_site", // Build output directory
+      includes: "_includes", // Includes directory (relative to input)
+      data: "_data" // Data directory (relative to input)
     },
-    pathPrefix: "/CalcToolsAI/", //  important for GitHub Pages
+    pathPrefix: "/", // Correct for custom domain
   };
 };
