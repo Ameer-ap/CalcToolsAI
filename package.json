@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "npx @11ty/eleventy --serve",
-  "build": "npx @11ty/eleventy"
- },
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
   "keywords": [],
   "author": "Ameer",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
   }
 }
