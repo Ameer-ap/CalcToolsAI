@@ -1,5 +1,5 @@
 ---
-title: About Us
+title: About Us - CalcTools AI
 layout: layouts/base.njk
 permalink: /about-us/
 description: Learn about CalcTools AI, our mission, and our free, accurate online calculators for students and professionals.

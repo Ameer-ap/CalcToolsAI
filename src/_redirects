@@ -1,11 +1,22 @@
-# Force serve important static files
-/robots.txt    /robots.txt    200
-/sitemap.xml   /sitemap.xml   200
+# ✅ Always serve important static SEO files
+/robots.txt        /robots.txt          200
+/sitemap.xml       /sitemap.xml         200
+/humans.txt        /humans.txt          200
 
-# Optional: make sure humans.txt (if you add one) is also served correctly
-/humans.txt    /humans.txt    200
+# ✅ Legacy URL redirects (SEO-friendly, permanent)
+/about.html        /about-us/           301
+/about             /about-us/           301
+/privacy.html      /privacy-policy/     301
+/privacy           /privacy-policy/     301
+/terms.html        /terms-of-service/   301
+/terms             /terms-of-service/   301
+/contact.html      /contact-us/         301
+/contact           /contact-us/         301
 
-# Prevent SPA-style rewrites for certain files
-/*.xml         /:splat        200
-/*.txt         /:splat        200
 
+# ✅ Ensure all .xml and .txt files are served as-is
+/*.xml             /:splat              200
+/*.txt             /:splat              200
+
+# ✅ (Optional) Catch-all rewrite to index.html for SPA routes
+# /*               /index.html          200
