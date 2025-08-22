@@ -670,3 +670,21 @@ footer .footer-content {
   margin: 0 8px;
   color: #666;
 }
+
+/* skip link */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #000;
+  color: #fff;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

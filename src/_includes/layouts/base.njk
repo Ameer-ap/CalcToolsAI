@@ -2,54 +2,27 @@
 <html lang="en">
   <head>
     {% include "partials/head.njk" %}
-
-    {# ✅ Canonical URL for SEO #}
-    <link 
-      rel="canonical" 
-      href="{{ page.url | absoluteUrl(site.url) }}"
-    >
-
-    {# ✅ Basic meta for SEO #}
-    <title>{{ title or site.siteName }}</title>
-    <meta name="description" content="{{ description or site.description }}">
-
-    {# ✅ Open Graph Tags (for social sharing) #}
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="{{ site.siteName }}">
-    <meta property="og:title" content="{{ title or site.siteName }}">
-    <meta property="og:description" content="{{ description or site.description }}">
-    <meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}">
-    {% if ogImage %}
-      <meta property="og:image" content="{{ ogImage | absoluteUrl(site.url) }}">
-    {% endif %}
-
-    {# ✅ Twitter Card #}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title or site.siteName }}">
-    <meta name="twitter:description" content="{{ description or site.description }}">
-    {% if ogImage %}
-      <meta name="twitter:image" content="{{ ogImage | absoluteUrl(site.url) }}">
-    {% endif %}
   </head>
   <body>
+    {# ✅ Skip to main content link for accessibility #}
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     {% include "partials/gtm-noscript.njk" %}
     {% include "partials/header.njk" %}
 
-    <main>
+    <main id="main-content" role="main">
       {% if page.url == "/" %}
-        {# ✅ Homepage provides its own wrappers (via index.md) #}
         {{ content | safe }}
       {% else %}
         <section class="content-section">
           <div class="container-padded page-content">
-
-            {# ✅ Schema.org Breadcrumbs, now fully compliant #}
+            {# ✅ Schema.org Breadcrumbs, fully compliant #}
             <nav class="breadcrumb" aria-label="Breadcrumb">
               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb-list">
-
+                
                 <!-- Home -->
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item">
-                  <a itemprop="item" href="{{ site.url }}/" class="breadcrumb-link">
+                  <a itemprop="item" href="/" class="breadcrumb-link">
                     <span itemprop="name">Home</span>
                   </a>
                   <meta itemprop="position" content="1" />
@@ -57,11 +30,9 @@
 
                 <li class="breadcrumb-separator" aria-hidden="true">/</li>
 
-                <!-- Current Page -->
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item breadcrumb-current">
-                  <a itemprop="item" href="{{ page.url | absoluteUrl(site.url) }}" class="breadcrumb-link">
-                    <span itemprop="name">{{ title or "Page" }}</span>
-                  </a>
+                <!-- Current Page (not clickable for better accessibility) -->
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item breadcrumb-current" aria-current="page">
+                  <span itemprop="name">{{ title or "Page" }}</span>
                   <meta itemprop="position" content="2" />
                 </li>
 
