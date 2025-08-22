@@ -1,2 +1,11 @@
-/robots.txt   /robots.txt   200
-/sitemap.xml  /sitemap.xml  200
+# Force serve important static files
+/robots.txt    /robots.txt    200
+/sitemap.xml   /sitemap.xml   200
+
+# Optional: make sure humans.txt (if you add one) is also served correctly
+/humans.txt    /humans.txt    200
+
+# Prevent SPA-style rewrites for certain files
+/*.xml         /:splat        200
+/*.txt         /:splat        200
+
