@@ -11,7 +11,7 @@
   --text-light: #fff;
   --highlight: #e8ddf2;
   --error-bg: #ffcccc; 
-  --ac-bg: #ff0066;
+  --ac-bg: #f57575;
   --active: #0000ff;
 
   /* Calculator Colors */
@@ -327,7 +327,7 @@ footer .footer-content {
   border-radius: var(--border-radius);
   font-size: 16px;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--text);
   cursor: pointer;
   transition: all 0.2s ease;
   background: var(--func-bg);
